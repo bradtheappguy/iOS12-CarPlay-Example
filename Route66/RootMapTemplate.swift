@@ -11,10 +11,6 @@ import CarPlay
 
 class RootMapTemplate: CPMapTemplate, CPMapTemplateDelegate {
 
-  override init(configuration: CPMapTemplateConfiguration?) {
-    super.init(configuration: configuration)
-    self.mapDelegate = self
-  }
   
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		997146CF20FE8E370048505A /* CarPlay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 997146CE20FE8E370048505A /* CarPlay.framework */; };
 		DB65F1D820DB962300C67DE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB65F1D720DB962300C67DE2 /* AppDelegate.swift */; };
 		DB65F1DA20DB962300C67DE2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB65F1D920DB962300C67DE2 /* ViewController.swift */; };
 		DB65F1DD20DB962300C67DE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB65F1DB20DB962300C67DE2 /* Main.storyboard */; };
@@ -17,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		997146CA20FE8DE90048505A /* Route66.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Route66.entitlements; sourceTree = "<group>"; };
+		997146CC20FE8DE90048505A /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = System/Library/Frameworks/HomeKit.framework; sourceTree = SDKROOT; };
+		997146CE20FE8E370048505A /* CarPlay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CarPlay.framework; path = System/Library/Frameworks/CarPlay.framework; sourceTree = SDKROOT; };
 		DB65F1D420DB962300C67DE2 /* Route66.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Route66.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB65F1D720DB962300C67DE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB65F1D920DB962300C67DE2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -33,17 +37,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				997146CF20FE8E370048505A /* CarPlay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		997146CB20FE8DE90048505A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				997146CE20FE8E370048505A /* CarPlay.framework */,
+				997146CC20FE8DE90048505A /* HomeKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DB65F1CB20DB962300C67DE2 = {
 			isa = PBXGroup;
 			children = (
 				DB65F1D620DB962300C67DE2 /* Route66 */,
 				DB65F1D520DB962300C67DE2 /* Products */,
+				997146CB20FE8DE90048505A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +73,7 @@
 		DB65F1D620DB962300C67DE2 /* Route66 */ = {
 			isa = PBXGroup;
 			children = (
+				997146CA20FE8DE90048505A /* Route66.entitlements */,
 				DBF95ADF20DB9C54008182C6 /* Sources */,
 				DBF95AE020DB9C60008182C6 /* Resources */,
 			);
@@ -118,6 +134,11 @@
 				TargetAttributes = {
 					DB65F1D320DB962300C67DE2 = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.HomeKit = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -304,7 +325,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Route66/Route66.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B2PA9L8XD3;
 				INFOPLIST_FILE = Route66/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -321,7 +344,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Route66/Route66.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B2PA9L8XD3;
 				INFOPLIST_FILE = Route66/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
